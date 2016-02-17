@@ -137,6 +137,11 @@
         type: String,
         value: "MM/dd/yy H:mm:ss.zzz"
       },
+
+      dateString: {
+        type: String,
+        observer: 'dateStringChanged'
+      },
       
       date : {
       
@@ -182,6 +187,10 @@
          return this.get(format,date);
         
     
+    },
+
+    dateStringChanged: function(d) {
+      this.date = new Date(d);
     }
     
   });
